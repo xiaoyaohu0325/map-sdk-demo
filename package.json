@@ -1,0 +1,19 @@
+{
+  "name": "arcgis-map-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@arcgis/core": "^4.29.10"
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
