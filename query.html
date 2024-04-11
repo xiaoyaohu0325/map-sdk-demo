@@ -10,17 +10,63 @@
     <link rel="stylesheet" href="src/main.css" />
     <style>
       html,
-      body,
-      #viewDiv {
+      body {
         padding: 0;
         margin: 0;
         height: 100%;
         width: 100%;
       }
+      #mapContainer {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+      }
+      #controller {
+        width: 100%;
+        height: 36px;
+      }
+      .view {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 50%;
+        outline: 2px solid greenyellow;
+        display: flex;
+        flex-direction: column;
+      }
+      .arcgis-map {
+        flex-grow: 1;
+        width: 100%;
+      }
+      .label {
+        width: 100%;
+        height: 36px;
+        text-align: center;
+      }
     </style>
     <script type="module" src="src/query.ts"></script>
   </head>
   <body>
-    <div id="viewDiv"></div>
+    <div id="mapContainer">
+      <div class="view">
+        <div class="label">
+          <span>102100</span>
+        </div>
+        <div id="viewDiv" class="arcgis-map"></div>
+      </div>
+      <div class="view">
+        <div class="label">
+          <span>Equal area projection</span>
+          <input type="radio" id="bufOrder1" name="bufferOrder" value="before" checked>
+          <label for="bufOrder1">Buffer before projection</label>
+          <input type="radio" id="bufOrder2" name="bufferOrder" value="after">
+          <label for="bufOrder2">Buffer after projection</label>
+        </div>
+        <div id="viewDiv2" class="arcgis-map"></div>
+      </div>
+    </div>
   </body>
 </html>
